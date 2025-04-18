@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store cart</title>
+  <link rel="icon" href="img/logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <script src="js/script.js" type="module"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <dialog>
+    <button autofocus class="close">Close</button>
+    <p class="dialog-text text-center">text content</p>
+  </dialog>
+
+  <header>
+    <!-- navbar  -->
+    <nav class="navbar flex space-between align-center">
+      <a href="/index.html"><img class="navbar-brand" src="img/logo.svg" alt="navbar-brand"></a>
+      <ul class="nav-links navbar-nav flex align-center collapse navbar-collapse inline-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#store">Store</a>
+        </li>
+      </ul>
+
+      <a href="tel:+123456789" class="nav-info flex align-center hide-s">
+        <img src="icons/phone-flip.svg" class="nav-info-icon" alt="icons-phone">
+        <span class="nav-info-text">+ 123 456 789</span>
+      </a>
+
+      <button class="btn nav-info flex align-center cart-info">
+        <svg class="store-cart-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <use href="./icons/cart-icon.svg#cartIcon" fill="currentColor" stroke="currentColor">
+        </svg>
+        <span>
+          <span class="item-count">0</span>
+          <span class="hide-s"> items - $</span>
+          <span class="item-total hide-s">0.00</span>
+        </span>
+      </button>
+
+      <button class="navbar-toggle-btn">
+        <img src="icons/bars.svg" alt="navbar-icon-links" class="navbar-toggle hide-l">
+      </button>
+    </nav>
+
+
+    <div class="cart">
+      <div class="cart-items-container btt-3"></div>
+      <template class="cart-item-template">
+        <!-- cart item -->
+        <div data-key data-price="" class="cart-item flex wrap space-between block-1">
+          <img src="" class="cart-item-img" alt="">
+          <div class="item-text">
+            <p class="cart-item-name">
+              cart item
+            </p>
+            <div class="cart-item-text flex space-between">
+              <p class="cart-item-price">1</p>
+            </div>
+          </div>
+          <div class="cart-item-buttons flex align-center space-between">
+            <button>
+              <img class="cart-item-btn cart-item-increase" src="icons/increase.svg" alt="cart-increase">
+            </button>
+            <div class="cart-item-text flex space-between">
+              <p class="cart-item-count h3 text-center">1</p>
+            </div>
+            <button>
+              <img class="cart-item-btn cart-item-decrease" src="icons/decrease.svg" alt="cart-decrease">
+            </button>
+          </div>
+          <button>
+            <img class="cart-item-btn cart-item-remove" src="icons/trash.svg" alt="cart-remove">
+          </button>
+        </div>
+      </template>
+
+      <!-- cart total -->
+      <div class="cart-total-container h3 flex btt-1">
+        <p>Total</p>
+        <span>$ <strong class="cart-total">0.00</strong></span>
+      </div>
+      <!-- cart buttons -->
+      <div class="cart-buttons-container flex space-between">
+        <button type="button" class="clear-cart-btn btn cart-btn btn-black">Clear cart</button>
+        <button type="button" class="checkout-btn btn cart-btn btn-rose">Checkout</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- banner -->
+    <section class="hero-container">
+      <div class="hero banner flex justify-center align-center text-center inline-4">
+        <h1 class="h2 btt-2">Welcome To <strong class="rose">Grandma's</strong></h1>
+        <a href="#store" class="btn btn-black banner-link">EXPLORE</a>
+      </div>
+    </section>
+
+
+
+    <!-- about -->
+    <section class="about flex wrap space-between inline-4 block-3" id="about">
+      <div class="about-content">
+        <h2 class="h2 btt-2">About <strong class="rose">Us</strong></h2>
+        <p class="about-text btt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, nisi aperiam? Non in
+          labore veniam, assumenda omnis est sed illo quisquam? Voluptate nesciunt in et quidem aperiam iusto
+          repellendus explicabo?</p>
+        <a href="#store" class="btn btn-black">EXPLORE</a>
+      </div>
+      <div>
+        <div class="about-container">
+          <img class="about-image" src="img/sweets-1.jpeg" alt="about">
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- store -->
+    <section class="store block-3" id="store">
+      <h2 class="h2 text-center btt-2">Our <strong class="rose">Store</strong></h2>
+      <form class="search-form container inline-auto">
+        <ul class="filter-buttons flex wrap justify-center">
+          <li class="four-half">
+            <input type="button" id="all" value="all" class="hide filter-btn">
+            <label for="all" class="btn btn-black">All</label>
+          </li>
+          <li class="four-half">
+            <input type="radio" name="variety" id="cakes" value="cakes" class="hide filter-btn variety">
+            <label for="cakes" class="btn btn-black">Cakes</label>
+          </li>
+          <li class="four-half">
+            <input type="radio" name="variety" id="cupcakes" value="cupcakes" class="hide filter-btn variety">
+            <label for="cupcakes" class="btn btn-black">Cupcakes</label>
+          </li>
+          <li class="four-half">
+            <input type="radio" name="variety" id="sweets" value="sweets" class="hide filter-btn variety">
+            <label for="sweets" class="btn btn-black">Sweets</label>
+          </li>
+          <li class="four-half">
+            <input type="radio" name="variety" id="doughnuts" value="doughnuts" class="hide filter-btn variety">
+            <label for="doughnuts" class="btn btn-black">Doughnuts</label>
+          </li>
+        </ul>
+
+        <div class="row form-field">
+          <div class="filter-search col-10 inline-auto col-md-6 flex justify-center block-1">
+            <button type="submit" class="search-btn">
+              <img src="icons/search.svg" class="search-btn-icon" alt="Search">
+            </button>
+            <input type="search" class="search-field form-control kaushan" placeholder='item...' name="searchFilter">
+          </div>
+        </div>
+      </form>
+
+
+      <div class="container inline-auto">
+        <div class="store-showcase row"></div>
+        <div class="no-found text-center hide">
+          <p class="h3 btt-1">No results found for your search</p>
+          <img src="img/hand-drawn-no-data-illustration_23-2150544943.avif" class="card-image"
+            alt="no-data-illustration">
+        </div>
+      </div>
+
+      <template class="store-card-template">
+        <!-- store card -->
+        <div class="store-item col-10 col-sm-6 col-lg-4 block-1" data-variety="" data-name="" data-price="">
+          <div class="card">
+            <div class="card-container">
+              <img src="img/fallback-default.svg" class="card-image" alt="store-card">
+              <button class="icon icon-btn">
+                <svg class="store-cart-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <use class="store-cart-icon-btn" href="./icons/cart-icon.svg#cartIcon" fill="currentColor"
+                    stroke="currentColor">
+                </svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-text flex space-between">
+                <h5 class="store-item-name h3">Cake</h5>
+                <span class="store-item-value h3">$ <strong class="store-item-price">0</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+    </section>
+  </main>
+</body>
+
+</html>
