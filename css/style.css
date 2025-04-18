@@ -43,16 +43,10 @@ html {
   scroll-behavior: smooth;
 }
 
-.di-container {
-  position: relative;
-  width: 100%;
-  height: 100dvh;
-  overflow: hidden;
-}
-
 dialog:open {
   animation: fade-in 0.7s ease-out;
 }
+
 dialog {
   min-width: max(33%, 24rem);
   position: fixed;
@@ -61,13 +55,15 @@ dialog {
   transform: translate(-50%, 0);
   z-index: 1;
 }
+
 dialog.dialog-close {
   animation: fade-out 1s ease-out;
 }
+
 .dialog-text {
   padding: 0.2rem 3rem 0.75rem;
-  /* font-size: 1.5rem; */
 }
+
 .close {
   font-size: 0.8rem;
   color: red;
@@ -102,19 +98,6 @@ dialog.dialog-close {
     transform: scaleY(0) translate(-50%, 0);
     display: none;
   }
-}
-
-::backdrop {
-  background-image: linear-gradient(
-    45deg,
-    red,
-    rebeccapurple,
-    dodgerblue,
-    green
-  );
-  opacity: 0.75;
-  height: 100%;
-  overflow: hidden;
 }
 
 .flex {
